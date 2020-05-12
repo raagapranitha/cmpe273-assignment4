@@ -58,7 +58,6 @@ class UDPServer():
                 response = response.encode()
             elif isinstance(response, dict):
                 response = json.dumps(response).encode()
-
             s.sendto(response, ip)
 
 
