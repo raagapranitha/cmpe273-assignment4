@@ -33,7 +33,6 @@ class NodeRing():
             if curr_weight > highest_weight:
                 highest_weight = curr_weight
                 node_selected = i
-        print(self.nodes[node_selected])
         return self.nodes[node_selected]
 
 
