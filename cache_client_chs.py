@@ -41,17 +41,9 @@ def process(udp_clients):
             if i!=0:
                 print(f' REPLICA PUT Response from server {n.port} is {resp}')
             else:
-                 print(f' PUT Response from server {n.port} is {resp}')
+                 print(f' ORIGINAL PUT Response from server {n.port} is {resp}')
             hash_codes.add(str(resp.decode()))
             i+=1
-        # node_actual,node_replica = hash_ring.get_node(key)
-        # response_actual = node_actual.send(data_bytes)
-        # reponse_replica = node_replica.send(data_bytes)
-        # print(response_actual)
-        # print(reponse_replica)
-        # hash_codes.add(str(response_actual.decode()))
-
-
     print(f"Number of Users={len(USERS)}\nNumber of Users Cached={len(hash_codes)}")
     
     # GET all users.
@@ -65,13 +57,8 @@ def process(udp_clients):
             if i != 0:
                 print(f'REPLICA GET Response from server {n.port} is {resp}')
             else:
-                print(f'GET Response from server {n.port} is {resp}')
+                print(f'ORIGINAL GET Response from server {n.port} is {resp}')
             i+=1
-        # node_actual,node_replica = hash_ring.get_node(key)
-        # response = node_actual.send(data_bytes)
-        # response_replica = node_replica.send(data_bytes)
-        # print(f'Data actual response: {response}')
-        # print(f'Data replica response: {response_replica}')
 
 
 if __name__ == "__main__":
